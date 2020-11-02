@@ -14,10 +14,10 @@ namespace CollectionsDemo
         static void Main(string[] args)
         {
             //calling the methods
-            //ListDemo();
-            // StackDemo();
-            // QueueDemo();
-            // SetDemo();
+            ListDemo();
+            StackDemo();
+            QueueDemo();
+            SetDemo();
             DictionaryDemo();
         }
         /// <summary>
@@ -133,11 +133,11 @@ namespace CollectionsDemo
             dictionay.Add(100, "Amith");
             dictionay.Add(101, "Dev");
             dictionay.Add(103, "Vijay");
-            Console.WriteLine("Acess value using key()key==100 is "+dictionay[100]);
+            Console.WriteLine("Acess value using key()key==100 is " + dictionay[100]);
             Console.WriteLine("Iterating Dictionary: ");
-            foreach(var element in dictionay)
+            foreach (var element in dictionay)
             {
-                Console.WriteLine("key "+element.Key+ " has value " +element.Value);
+                Console.WriteLine("key " + element.Key + " has value " + element.Value);
             }
             // removing element
             dictionay.Remove(103);
