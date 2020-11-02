@@ -14,10 +14,11 @@ namespace CollectionsDemo
         static void Main(string[] args)
         {
             //calling the methods
-            ListDemo();
-            StackDemo();
-            QueueDemo();
-            SetDemo();
+            //ListDemo();
+            // StackDemo();
+            // QueueDemo();
+            // SetDemo();
+            DictionaryDemo();
         }
         /// <summary>
         /// method for working with lists 
@@ -123,6 +124,27 @@ namespace CollectionsDemo
             while (enumerator.MoveNext())
             {
                 Console.WriteLine(enumerator.Current);
+            }
+        }
+        private static void DictionaryDemo()
+        {
+            Console.WriteLine("In Dictionary");
+            Dictionary<int, string> dictionay = new Dictionary<int, string>();
+            dictionay.Add(100, "Amith");
+            dictionay.Add(101, "Dev");
+            dictionay.Add(103, "Vijay");
+            Console.WriteLine("Acess value using key()key==100 is "+dictionay[100]);
+            Console.WriteLine("Iterating Dictionary: ");
+            foreach(var element in dictionay)
+            {
+                Console.WriteLine("key "+element.Key+ " has value " +element.Value);
+            }
+            // removing element
+            dictionay.Remove(103);
+            Console.WriteLine("printing elementing after removing element");
+            foreach (var element in dictionay)
+            {
+                Console.WriteLine("key " + element.Key + " has value " + element.Value);
             }
         }
     }
