@@ -12,10 +12,11 @@ namespace CollectionsDemo
         /// <param name="args">The arguments.</param>
         /// <returns></returns>
         static void Main(string[] args)
-        {   
+        {
             //calling the methods
             ListDemo();
             StackDemo();
+            QueueDemo();
         }
         /// <summary>
         /// method for working with lists 
@@ -55,13 +56,37 @@ namespace CollectionsDemo
                 Console.WriteLine(item);
             }
             //In stack peek method gets the top element in the stack
-            Console.WriteLine("peeking " + myStack.Peek());
+            Console.WriteLine("peeking: " + myStack.Peek());
             //In stack pop method gets the top element in the stack and removes it
-            Console.WriteLine("Poping " + myStack.Pop());
+            Console.WriteLine("Poping: " + myStack.Pop());
             //Printing the finalelements after poping the element
             foreach (var item in myStack)
             {
                 Console.WriteLine(item);
+            }
+        }
+        private static void QueueDemo()
+        {
+            Console.WriteLine("\n In  Queue demo");
+            //Creating the queue
+            Queue<string> queue = new Queue<string>();
+            //Adding elements to queue
+            queue.Enqueue("Kalyan");
+            queue.Enqueue("Bhanu");
+            queue.Enqueue("Anirudh");
+            Console.WriteLine("Peeking: " + queue.Peek());
+            foreach (var element in queue)
+            {
+                Console.WriteLine(element);
+            }
+            //Element at the starting of the queue will be removed
+            Console.WriteLine("Dequeueing the element: " + queue.Dequeue());
+            //Iterating queue elements using enumerator and printing elements
+            Queue<string>.Enumerator enumerator = queue.GetEnumerator();
+            Console.WriteLine("Elements after dequeuing"); 
+            while (enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Current);
             }
         }
     }
