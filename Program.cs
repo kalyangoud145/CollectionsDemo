@@ -17,6 +17,7 @@ namespace CollectionsDemo
             ListDemo();
             StackDemo();
             QueueDemo();
+            SetDemo();
         }
         /// <summary>
         /// method for working with lists 
@@ -65,6 +66,9 @@ namespace CollectionsDemo
                 Console.WriteLine(item);
             }
         }
+        /// <summary>
+        /// Gives understang about queue
+        /// </summary>
         private static void QueueDemo()
         {
             Console.WriteLine("\n In  Queue demo");
@@ -83,7 +87,39 @@ namespace CollectionsDemo
             Console.WriteLine("Dequeueing the element: " + queue.Dequeue());
             //Iterating queue elements using enumerator and printing elements
             Queue<string>.Enumerator enumerator = queue.GetEnumerator();
-            Console.WriteLine("Elements after dequeuing"); 
+            Console.WriteLine("Elements after dequeuing");
+            while (enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Current);
+            }
+        }
+        /// <summary>
+        /// Gives understang about Set
+        /// </summary>
+        private static void SetDemo()
+        {
+            Console.WriteLine("\n In  Set demo");
+            // Creating HashSet
+            // Using HashSet class 
+            HashSet<string> hashSet = new HashSet<string>();
+            // Add the elements in HashSet 
+            // Using Add method 
+            hashSet.Add("Kalyan");
+            hashSet.Add("Bhanu");
+            hashSet.Add("Anirudh");
+            hashSet.Add("Ted");
+            Console.WriteLine("Elements of hashSet:");
+            // Accessing elements of HashSet 
+            // Using foreach loop 
+            foreach (var val in hashSet)
+            {
+                Console.WriteLine(val);
+            }
+            //Removing specific element in the set
+            hashSet.Remove("Ted");
+            //Iterating queue elements using enumerator and printing elements
+            HashSet<string>.Enumerator enumerator = hashSet.GetEnumerator();
+            Console.WriteLine("Elements after removing");
             while (enumerator.MoveNext())
             {
                 Console.WriteLine(enumerator.Current);
