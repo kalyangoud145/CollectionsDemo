@@ -126,6 +126,7 @@ namespace CollectionsDemo
                 Console.WriteLine(enumerator.Current);
             }
         }
+        //Gives understanding about dictionary
         private static void DictionaryDemo()
         {
             Console.WriteLine("In Dictionary");
